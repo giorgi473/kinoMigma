@@ -5,13 +5,22 @@ import { Home, Film, Tv, Clock, Star, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
+// const menuItems = [
+//   { icon: Home, label: "მთავარი", href: "/" },
+//   { icon: Film, label: "ფილმები", href: "/movies" },
+//   { icon: Tv, label: "სერიალები", href: "/series" },
+//   { icon: Clock, label: "ახალი", href: "/new" },
+//   { icon: Star, label: "ანიმაციური", href: "/popular" },
+//   { icon: Users, label: "ჟანრები", href: "/genres" },
+// ];
+
 const menuItems = [
   { icon: Home, label: "მთავარი", href: "/" },
   { icon: Film, label: "ფილმები", href: "/movies" },
   { icon: Tv, label: "სერიალები", href: "/series" },
-  { icon: Clock, label: "ახალი", href: "/new" },
-  { icon: Star, label: "ანიმაციური", href: "/popular" },
-  { icon: Users, label: "ჟანრები", href: "/genres" },
+  { icon: Star, label: "ანიმაციები", href: "/popular" },
+  { icon: Clock, label: "ანიმე", href: "/new" },
+  { icon: Users, label: "მსახიობები", href: "/genres" },
 ];
 
 export function Sidebar() {

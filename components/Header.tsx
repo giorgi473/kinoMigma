@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Search,
   Heart,
@@ -11,10 +13,10 @@ import {
   Home,
   Film,
   Tv,
-  Popcorn,
-  Download,
-  Mail,
+  Clock,
+  Star,
   Users,
+  Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,14 +32,16 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
+  const pathname = usePathname();
+
   const menuItems = [
-    { icon: Home, label: "მთავარი გვერდი", active: false },
-    { icon: Film, label: "ფილმები", active: true },
-    { icon: Tv, label: "სერიალები", active: false },
-    { icon: Popcorn, label: "ანიმაცია", active: false },
-    { icon: Download, label: "ჩამოტვირთვა", active: false },
-    { icon: Mail, label: "კონტაქტი", active: false },
-    { icon: Users, label: "მსახიობები", active: false },
+    { icon: Home, label: "მთავარი გვერდი", href: "/" },
+    { icon: Film, label: "ფილმები", href: "/movies" },
+    { icon: Tv, label: "სერიალები", href: "/series" },
+    { icon: Star, label: "ანიმაციები", href: "/popular" },
+    { icon: Clock, label: "ანიმე", href: "/new" },
+    { icon: Mail, label: "კონტაქტი", href: "/contact" },
+    { icon: Users, label: "მსახიობები", href: "/genres" },
   ];
 
   return (
@@ -164,83 +168,87 @@ export function Header() {
       </header>
 
       {/* მობილური საიტბარი (drawer) */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          {/* ფონის დაბნელება */}
-          <div
-            className="fixed inset-0 bg-black/50"
-            onClick={() => setMobileMenuOpen(false)}
-          />
+      <div
+        className={`fixed inset-0 z-50 flex md:hidden ${
+          mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+      >
+        {/* ფონის დაბნელება */}
+        <div
+          className={`fixed inset-0 bg-black/30 transition-opacity duration-300 ease-in-out ${
+            mobileMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setMobileMenuOpen(false)}
+        />
 
-          {/* საიტბარი */}
-          <div className="relative w-80 max-w-full bg-background border-r shadow-2xl flex flex-col">
-            {/* ზედა ნაწილი: ლოგო + X */}
-            <div className="flex items-center justify-between p-6 border-b">
-              <Image
-                src="/logo/Logo.png"
-                alt="KINOMIGMA"
-                width={80}
-                height={80}
-                className="h-12 w-auto"
-              />
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
+        {/* საიტბარი */}
+        <div
+          className={`relative w-80 max-w-full bg-zinc-900 border-r shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out ${
+            mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          {/* ზედა ნაწილი: ლოგო + X */}
+          <div className="flex items-center justify-between p-4">
+            <Image
+              src="/logo/Logo.png"
+              alt="KINOMIGMA"
+              width={50}
+              height={50}
+              className="h-8 w-auto"
+            />
+            <button
+              className="bg-black p-2 rounded-md text-gray-400"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
 
-            {/* მენიუ პუნქტები */}
-            <nav className="flex-1 overflow-y-auto py-4">
-              {menuItems.map((item, index) => (
-                <button
-                  key={index}
-                  className={`w-full flex items-center gap-4 px-6 py-4 text-left hover:bg-accent transition-colors ${
-                    item.active ? "bg-accent/50 border-r-4 border-primary" : ""
-                  }`}
-                >
-                  <item.icon className="h-5 w-5" />
-                  <span className="text-lg">{item.label}</span>
-                </button>
-              ))}
-            </nav>
+          {/* მენიუ პუნქტები */}
+          <nav className="flex-1 overflow-y-auto py-4">
+            {menuItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className={`w-full flex items-center gap-4 px-6 py-4 text-left transition-colors ${
+                  pathname === item.href
+                    ? "bg-zinc-800 border-r-4 border-primary"
+                    : "text-gray-500"
+                }`}
+              >
+                <item.icon className="h-5 w-5 text-gray-500" />
+                <span className="text-lg">{item.label}</span>
+              </Link>
+            ))}
+          </nav>
 
-            {/* ქვედა ნაწილი: სოციალური ქსელები */}
-            <div className="border-t p-6 space-y-3">
-              <Button
-                variant="secondary"
-                className="w-full justify-start gap-3"
-              >
-                <div className="bg-gray-700 rounded p-2">
-                  <Image
-                    src="/icons/discord.svg"
-                    alt="Discord"
-                    width={20}
-                    height={20}
-                  />
-                </div>
-                <span>Discord</span>
-              </Button>
-              <Button
-                variant="secondary"
-                className="w-full justify-start gap-3"
-              >
-                <div className="bg-blue-600 rounded p-2">
-                  <Image
-                    src="/icons/facebook.svg"
-                    alt="Facebook"
-                    width={20}
-                    height={20}
-                  />
-                </div>
-                <span>Facebook</span>
-              </Button>
-            </div>
+          {/* ქვედა ნაწილი: სოციალური ქსელები */}
+          <div className="border-t p-6 space-y-3">
+            <button className="flex w-full items-center gap-3 bg-zinc-800 rounded-md">
+              <div className="p-2 flex items-center justify-center">
+                <Image
+                  src="/vector/discord.png"
+                  alt="Discord"
+                  width={18}
+                  height={18}
+                />
+              </div>
+              <span className="flex-1 text-center text-zinc-400">Discord</span>
+            </button>
+            <button className="flex w-full items-center gap-3 bg-zinc-800 rounded-md">
+              <div className="p-2 flex items-center justify-center">
+                <Image
+                  src="/vector/facebook.png"
+                  alt="Facebook"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <span className="flex-1 text-center text-zinc-400">Facebook</span>
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
