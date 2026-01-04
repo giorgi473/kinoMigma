@@ -6,7 +6,7 @@ function home() {
     <div>
       <HeroSection />
       <div className="px-4 py-12">
-        <MovieCarousel title="ახალი ფილმები" category="newest" />
+        <MovieCarousel title="Movies" category="newest" />
       </div>
     </div>
   );

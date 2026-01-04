@@ -18,7 +18,7 @@ export default function MovieHeroSlider() {
 
   return (
     <div
-      className="relative w-full overflow-hidden bg-black px-4"
+      className="relative w-full overflow-hidden bg-black px-4 select-none"
       style={{ height: "60vh" }}
     >
       <Swiper
