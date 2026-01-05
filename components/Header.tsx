@@ -46,7 +46,7 @@ export function Header() {
 
   return (
     <>
-      <header className="z-50 bg-background border-b sticky top-0">
+      <header className="z-50 bg-background border-b">
         <div className="container mx-auto px-4">
           {/* მთავარი ხედი */}
           <div className="flex items-center justify-between h-16 relative">

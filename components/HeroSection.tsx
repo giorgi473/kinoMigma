@@ -18,7 +18,7 @@ export default function MovieHeroSlider() {
 
   return (
     <div
-      className="relative w-full overflow-hidden bg-black px-4 select-none"
+      className="relative w-full overflow-hidden bg-black px-0 md:px-4 select-none"
       style={{ height: "60vh" }}
     >
       <Swiper
@@ -32,7 +32,7 @@ export default function MovieHeroSlider() {
         allowTouchMove={true}
         onSwiper={setSwiperInstance}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-        className="h-full w-full rounded-lg md:rounded-xl my-hero-swiper"
+        className="h-full w-full  md:rounded-lg my-hero-swiper"
         pagination={{
           clickable: true,
         }}
@@ -41,7 +41,7 @@ export default function MovieHeroSlider() {
           <SwiperSlide key={movie.id}>
             <div className="relative h-full w-full">
               <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg md:rounded-xl"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat  md:rounded-lg"
                 style={{
                   backgroundImage: `url('${movie.backdrop}')`,
                   backgroundSize: "cover",
