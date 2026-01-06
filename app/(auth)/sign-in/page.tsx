@@ -1,7 +1,7 @@
 import React from "react";
 
-function moviesPage() {
+function page() {
   return <div>page</div>;
 }
 
-export default moviesPage;
+export default page;

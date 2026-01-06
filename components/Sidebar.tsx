@@ -28,7 +28,7 @@ export function Sidebar() {
   const router = useRouter();
 
   return (
-    <aside className="w-28 h-screen hidden 2xl:flex items-center justify-center border-r border-border bg-zinc-900 py-4 px-2 shrink-0">
+    <aside className="w-28 h-screen hidden 2xl:flex items-center justify-center border-r z-50 border-border bg-zinc-900 py-4 px-2 shrink-0">
       <nav className="space-y-2">
         {menuItems.map((item) => {
           const Icon = item.icon;

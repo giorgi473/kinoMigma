@@ -19,7 +19,7 @@ export function MobileNav() {
   const router = useRouter();
 
   return (
-    <nav className="flex mb-3 2xl:hidden overflow-x-auto bg-zinc-900 px-4 py-3 hide-scrollbar">
+    <nav className="flex mb-3 2xl:hidden overflow-x-auto z-50 bg-zinc-900 px-4 py-3 hide-scrollbar">
       <div className="flex gap-6 min-w-max">
         {menuItems.map((item) => {
           const Icon = item.icon;

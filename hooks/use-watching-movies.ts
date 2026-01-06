@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export interface WatchingMovie {
   id: string;
@@ -12,19 +12,40 @@ export interface WatchingMovie {
   progress: number;
 }
 
+const STORAGE_KEY = "watching-movies";
+
 export function useWatchingMovies() {
   const [watchingMovies, setWatchingMovies] = useState<WatchingMovie[]>([]);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        try {
+          setWatchingMovies(JSON.parse(stored));
+        } catch {
+          setWatchingMovies([]);
+        }
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isClient && typeof window !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(watchingMovies));
+    }
+  }, [watchingMovies, isClient]);
 
   const handleMovieSelect = (movie: {
     title: string;
     georgianTitle: string;
     poster: string;
   }) => {
-    // Check if movie already exists in watching list
     const exists = watchingMovies.some((m) => m.title === movie.title);
     if (exists) return;
 
-    // Add movie with random progress for demo
     const progress = Math.floor(Math.random() * 70) + 10;
     const totalMinutes = Math.floor(Math.random() * 60) + 60;
     const currentMinutes = Math.floor((totalMinutes * progress) / 100);
