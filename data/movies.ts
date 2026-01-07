@@ -1,63 +1,3 @@
-// export const movies = [
-//   {
-//     title: "მხსნელი რუბი",
-//     georgianTitle: "RESCUED BY RUBY",
-//     rating: "7.2",
-//     genres: "DRAMA, BIOGRAPHY, FAMILY",
-//     poster: "/1.jpg",
-//   },
-//   {
-//     title: "ახალი",
-//     georgianTitle: "FRESH",
-//     rating: "6.7",
-//     genres: "THRILLER, HORROR, COMEDY",
-//     poster: "/2.jpg",
-//   },
-//   {
-//     title: "ადამის პროექტი",
-//     georgianTitle: "THE ADAM PROJECT",
-//     rating: "6.8",
-//     genres: "ACTION, ADVENTURE, COMEDY",
-//     poster: "/3.jpg",
-//   },
-//   {
-//     title: "უკანასკნელი დუელი",
-//     georgianTitle: "THE LAST DUEL",
-//     rating: "7.4",
-//     genres: "DRAMA, HISTORY",
-//     poster: "/4.jpg",
-//   },
-//   {
-//     title: "მფლობელები",
-//     georgianTitle: "THE OWNERS",
-//     rating: "5.9",
-//     genres: "HORROR",
-//     poster: "/5.jpg",
-//   },
-//   {
-//     title: "გაუჩინარება",
-//     georgianTitle: "THE VANISHING",
-//     rating: "6.0",
-//     genres: "DRAMA, HISTORY",
-//     poster: "/6.jpg",
-//   },
-//   {
-//     title: "განდევნა",
-//     georgianTitle: "BANISHING",
-//     rating: "5.9",
-//     genres: "HORROR",
-//     poster: "/7.jpg",
-//   },
-//   {
-//     title: "ადამის პროექტი",
-//     georgianTitle: "THE ADAM PROJECT",
-//     rating: "6.8",
-//     genres: "ACTION, ADVENTURE, COMEDY",
-//     poster: "/8.jpg",
-//   },
-// ];
-// data/movies.ts
-
 export const movies = [
   {
     id: 1307,
@@ -67,7 +7,8 @@ export const movies = [
     rating: "7.2",
     genres: "DRAMA, BIOGRAPHY, FAMILY",
     poster: "/1.jpg",
-    video: "/videos/1.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2022,
     description:
       "ფილმი მოგვითხრობს პოლიციელის და მისი ძაღლის შესახებ, რომლებიც ერთად მუშაობენ საძიებო-სამაშველო ოპერაციებში.",
@@ -80,7 +21,8 @@ export const movies = [
     rating: "6.7",
     genres: "THRILLER, HORROR, COMEDY",
     poster: "/2.jpg",
-    video: "/videos/2.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2022,
     description:
       "ახალგაზრდა ქალი გაიცნობს იდეალურ მამაკაცს, მაგრამ მალე აღმოაჩენს მის საშინელ საიდუმლოებას.",
@@ -93,7 +35,8 @@ export const movies = [
     rating: "6.8",
     genres: "ACTION, ADVENTURE, COMEDY",
     poster: "/3.jpg",
-    video: "/videos/3.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2022,
     description:
       "დროში მოგზაური პილოტი უბრუნდება წარსულში და ხვდება 12 წლის საკუთარ თავს.",
@@ -106,7 +49,8 @@ export const movies = [
     rating: "7.4",
     genres: "DRAMA, HISTORY",
     poster: "/4.jpg",
-    video: "/videos/4.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2021,
     description:
       "საშუალო საუკუნეების საფრანგეთში ორი მეგობარი ხდება მტრები ერთი ქალის გამო.",
@@ -119,7 +63,8 @@ export const movies = [
     rating: "5.9",
     genres: "HORROR",
     poster: "/5.jpg",
-    video: "/videos/5.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2020,
     description:
       "ახალგაზრდები ცდილობენ სახლის გაძარცვას, მაგრამ სახლის მფლობელები უეცრად ბრუნდებიან.",
@@ -132,7 +77,8 @@ export const movies = [
     rating: "6.0",
     genres: "DRAMA, HISTORY",
     poster: "/6.jpg",
-    video: "/videos/6.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2018,
     description:
       "სამი შუშის მცველი იდუმალ კუნძულზე პოულობენ განძს და იწყებენ ერთმანეთის ეჭვმიტანილობას.",
@@ -145,7 +91,8 @@ export const movies = [
     rating: "5.9",
     genres: "HORROR",
     poster: "/7.jpg",
-    video: "/videos/7.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2020,
     description: "ოჯახი გადადის მოჩვენებულ სახლში და ებრძვის ბოროტ ძალებს.",
   },
@@ -157,7 +104,8 @@ export const movies = [
     rating: "6.8",
     genres: "ACTION, ADVENTURE, COMEDY",
     poster: "/8.jpg",
-    video: "/videos/8.mp4",
+    strangerThings: " ქართულად, ინგლისურად",
+    video: "/videos/Generated.mp4",
     year: 2022,
     description:
       "დროში მოგზაური პილოტი უბრუნდება წარსულში და ხვდება 12 წლის საკუთარ თავს.",
