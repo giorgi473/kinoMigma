@@ -1,22 +1,27 @@
 import Image from "next/image";
-import { movies } from "@/data/movies";
-import { notFound } from "next/navigation";
 import { AlertTriangle, Clock, Heart, Plus, Bell, User } from "lucide-react";
+import { series } from "@/data/series";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: Promise<{
-    id: string;
-    slug: string;
+    series?: string[];
   }>;
 }
 
-export default async function MoviePage({ params }: PageProps) {
-  const { id } = await params;
-  const movieId = Number.parseInt(id);
+export default async function SeriesPage({ params }: PageProps) {
+  const { series: seriesParams } = await params;
 
-  const movie = movies.find((m) => m.id === movieId);
+  // series array should be [id, slug] format
+  if (!seriesParams || seriesParams.length === 0) {
+    notFound();
+  }
 
-  if (!movie) {
+  const seriesId = Number.parseInt(seriesParams[0]);
+
+  const seriesItem = series.find((s) => s.id === seriesId);
+
+  if (!seriesItem) {
     notFound();
   }
 
@@ -25,8 +30,8 @@ export default async function MoviePage({ params }: PageProps) {
       {/* Fixed Background */}
       <div className="fixed top-0 left-0 w-full h-full -z-10">
         <Image
-          src={movie.poster || "/placeholder.svg"}
-          alt={movie.title}
+          src={seriesItem.poster || "/placeholder.svg"}
+          alt={seriesItem.title}
           fill
           className="object-cover hidden lg:flex"
           priority
@@ -42,12 +47,12 @@ export default async function MoviePage({ params }: PageProps) {
       <div className="relative z-10 min-h-screen mt-0 lg:mt-10 bg-linear-to-b from-transparent via-zinc-800/95 to-zinc-950">
         <div className="w-full px-0 lg:px-10">
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-8 pt-0 lg:pt-4 pb-4">
-            {/* Left side - Movie Poster */}
+            {/* Left side - Series Poster */}
             <div className="lg:w-70 lg:shrink-0">
               <div className="relative w-full aspect-2/3 overflow-hidden shadow-2xl hidden lg:flex">
                 <Image
-                  src={movie.poster || "/placeholder.svg"}
-                  alt={movie.title}
+                  src={seriesItem.poster || "/placeholder.svg"}
+                  alt={seriesItem.title}
                   fill
                   className="object-cover"
                   quality={90}
@@ -58,7 +63,7 @@ export default async function MoviePage({ params }: PageProps) {
                 />
               </div>
               <button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 hidden lg:block px-6 transition-colors">
-                ფილმის ორიგინალი
+                სერიალის ორიგინალი
               </button>
             </div>
 
@@ -75,29 +80,35 @@ export default async function MoviePage({ params }: PageProps) {
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  poster={movie.poster}
+                  poster={seriesItem.poster}
                   preload="metadata"
                 >
-                  <source src={movie.video} type="video/mp4" />
+                  <source src={seriesItem.video} type="video/mp4" />
                   თქვენი ბრაუზერი არ უჭერს მხარს ვიდეოს.
                 </video>
               </div>
             </div>
           </div>
 
-          {/* Movie Details */}
+          {/* Series Details */}
           <div className="flex items-start justify-between px-4 lg:px-0">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-bold text-white">{movie.title}</h1>
+              <h1 className="text-3xl font-bold text-white">
+                {seriesItem.title}
+              </h1>
               <p className="text-gray-300">
-                Stranger Things / {movie.strangerThings}
+                Stranger Things / {seriesItem.strangerThings}
               </p>
-              <p className="text-yellow-400 font-semibold">⭐ {movie.rating}</p>
-              <p className="text-gray-400">{movie.genres}</p>
-              <p className="text-gray-300 font-medium">{movie.georgianTitle}</p>
-              <p className="text-gray-400">{movie.year}</p>
+              <p className="text-yellow-400 font-semibold">
+                ⭐ {seriesItem.rating}
+              </p>
+              <p className="text-gray-400">{seriesItem.genres}</p>
+              <p className="text-gray-300 font-medium">
+                {seriesItem.georgianTitle}
+              </p>
+              <p className="text-gray-400">{seriesItem.year}</p>
               <p className="text-gray-300 mt-2 max-w-3xl">
-                {movie.description}
+                {seriesItem.description}
               </p>
             </div>
             {/* right side icons */}
@@ -139,7 +150,6 @@ export default async function MoviePage({ params }: PageProps) {
                 </div>
 
                 {/* Rating badge */}
-
                 <span className="text-white font-bold text-xs bg-red-500 rounded-full p-2">
                   4.7
                 </span>

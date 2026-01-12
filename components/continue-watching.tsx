@@ -56,7 +56,7 @@ export function ContinueWatching({
   const showNavigation = canScroll;
 
   return (
-    <div className="space-y-6 select-none mt-10">
+    <div className="space-y-6 select-none mt-10 mb-10">
       <div className="flex items-center justify-between">
         <h2 className="text-sm sm:text-md md:text-lg lg:text-xl font-bold flex items-center gap-2">
           <span className="w-0.5 h-4 sm:h-5 bg-yellow-500"></span>

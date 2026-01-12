@@ -16,6 +16,7 @@ function home() {
         <MovieCarousel
           title="Movies"
           category="newest"
+          type="movie"
           onMovieSelect={handleMovieSelect}
         />
         {watchingMovies.length > 0 && (
@@ -24,6 +25,12 @@ function home() {
             onRemoveMovie={handleRemoveMovie}
           />
         )}
+        <MovieCarousel
+          title="series"
+          category="New"
+          onMovieSelect={handleMovieSelect}
+          type="series"
+        />
       </div>
     </div>
   );

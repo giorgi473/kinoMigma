@@ -1,18 +1,23 @@
 import Image from "next/image";
+import { AlertTriangle, Clock, Heart, Plus, Bell, User } from "lucide-react";
 import { movies } from "@/data/movies";
 import { notFound } from "next/navigation";
-import { AlertTriangle, Clock, Heart, Plus, Bell, User } from "lucide-react";
 
 interface PageProps {
   params: Promise<{
-    id: string;
-    slug: string;
+    films?: string[];
   }>;
 }
 
-export default async function MoviePage({ params }: PageProps) {
-  const { id } = await params;
-  const movieId = Number.parseInt(id);
+export default async function FilmsPage({ params }: PageProps) {
+  const { films } = await params;
+
+  // films array should be [id, slug] format
+  if (!films || films.length === 0) {
+    notFound();
+  }
+
+  const movieId = Number.parseInt(films[0]);
 
   const movie = movies.find((m) => m.id === movieId);
 
@@ -139,7 +144,6 @@ export default async function MoviePage({ params }: PageProps) {
                 </div>
 
                 {/* Rating badge */}
-
                 <span className="text-white font-bold text-xs bg-red-500 rounded-full p-2">
                   4.7
                 </span>
