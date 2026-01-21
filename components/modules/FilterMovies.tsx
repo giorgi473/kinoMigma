@@ -138,7 +138,7 @@ function FilterMoviesTags() {
   const handleRatingChange = (min: string, max: string) => {
     if (min || max) {
       setActiveTags((tags) =>
-        tags.filter((tag) => tag.category !== "რეიტინგი")
+        tags.filter((tag) => tag.category !== "რეიტინგი"),
       );
 
       const label = `${min || "0"} - ${max || "10"}`;
@@ -153,7 +153,7 @@ function FilterMoviesTags() {
       }));
     } else {
       setActiveTags((tags) =>
-        tags.filter((tag) => tag.category !== "რეიტინგი")
+        tags.filter((tag) => tag.category !== "რეიტინგი"),
       );
       setSelectedFilters((prev) => {
         const newFilters = { ...prev };
@@ -184,7 +184,8 @@ function FilterMoviesTags() {
     }
 
     return filterCategories[category as keyof typeof filterCategories].filter(
-      (option) => option.label.toLowerCase().includes(searchQuery.toLowerCase())
+      (option) =>
+        option.label.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   };
 
