@@ -1,12 +1,12 @@
-export const series = [
+export const anime = [
   {
     id: 1307,
     title: "მხსნელი რუბი",
     georgianTitle: "RESCUED BY RUBY",
     slug: "rescued-by-ruby",
-    rating: "7.6",
+    rating: "7.2",
     genres: "DRAMA, BIOGRAPHY, FAMILY",
-    poster: "/series/image1.svg",
+    poster: "/1.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Avatar.mp4",
     year: 2022,
@@ -29,76 +29,15 @@ export const series = [
       { name: "სკოტ ვოლფი", image: "/cast/image2.svg" },
       { name: "კეილი ელიზი", image: "/cast/image3.svg" },
     ],
-    seasons: [
-      // season 1
-      {
-        seasonNumber: 1,
-        episodes: [
-          // epizode 1
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          // epizode 2
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          // epizode 2
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          // epizode 2
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-        ],
-      },
-      // season 2
-      {
-        seasonNumber: 2,
-        episodes: [
-          // epizode 1
-          {
-            videoBaseUrl: "/videos/Avatar.mp",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          // epizode 2
-          {
-            videoBaseUrl: "/videos/Avatar.mp",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          // epizode 3
-          {
-            videoBaseUrl: "/videos/Avatar.mp",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-        ],
-      },
-    ],
   },
   {
     id: 1308,
     title: "ახალი",
     georgianTitle: "FRESH",
     slug: "fresh",
-    rating: "4.0",
+    rating: "6.7",
     genres: "THRILLER, HORROR, COMEDY",
-    poster: "/series/image2.svg",
+    poster: "/2.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2022,
@@ -127,9 +66,9 @@ export const series = [
     title: "ადამის პროექტი",
     georgianTitle: "THE ADAM PROJECT",
     slug: "the-adam-project",
-    rating: "3.8",
+    rating: "6.8",
     genres: "ACTION, ADVENTURE, COMEDY",
-    poster: "/series/image3.svg",
+    poster: "/3.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2022,
@@ -152,23 +91,6 @@ export const series = [
       { name: "სკოტ ვოლფი", image: "/cast/image2.svg" },
       { name: "კეილი ელიზი", image: "/cast/image3.svg" },
     ],
-    seasons: [
-      {
-        seasonNumber: 1,
-        episodes: [
-          // epizode 1
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-          // epizode 2
-          {
-            videoBaseUrl: "/videos/Avatar.mp4",
-            thumbnailBaseUrl: "/thumbs/kalp-yarasi-e",
-          },
-        ],
-      },
-    ],
   },
   {
     id: 1310,
@@ -177,7 +99,7 @@ export const series = [
     slug: "the-last-duel",
     rating: "7.4",
     genres: "DRAMA, HISTORY",
-    poster: "/series/image4.svg",
+    poster: "/4.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2021,
@@ -208,7 +130,7 @@ export const series = [
     slug: "the-owners",
     rating: "5.9",
     genres: "HORROR",
-    poster: "/series/image5.svg",
+    poster: "/5.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2020,
@@ -239,7 +161,7 @@ export const series = [
     slug: "the-vanishing",
     rating: "6.0",
     genres: "DRAMA, HISTORY",
-    poster: "/series/image6.svg",
+    poster: "/6.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2018,
@@ -270,7 +192,7 @@ export const series = [
     slug: "banishing",
     rating: "5.9",
     genres: "HORROR",
-    poster: "/series/image7.svg",
+    poster: "/7.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2020,
@@ -298,9 +220,9 @@ export const series = [
     title: "ადამის პროექტი",
     georgianTitle: "THE ADAM PROJECT",
     slug: "the-adam-project-2",
-    rating: "4.8",
+    rating: "6.8",
     genres: "ACTION, ADVENTURE, COMEDY",
-    poster: "/series/image8.svg",
+    poster: "/8.jpg",
     strangerThings: " ქართულად, ინგლისურად",
     video: "/videos/Generated.mp4",
     year: 2022,

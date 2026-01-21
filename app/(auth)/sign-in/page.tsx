@@ -103,7 +103,7 @@ export default function SignInPage() {
                                 "w-full bg-zinc-800/80 text-white rounded-lg pl-12 pr-4 py-5 outline-none transition-all",
                                 form.formState.errors.email
                                   ? ""
-                                  : "focus:ring-2 focus:ring-yellow-500"
+                                  : "focus:ring-2 focus:ring-yellow-500",
                               )}
                             />
                           </div>
@@ -130,7 +130,7 @@ export default function SignInPage() {
                                 "w-full bg-zinc-800/80 text-white rounded-lg pl-12 pr-12 py-5 outline-none transition-all",
                                 form.formState.errors.password
                                   ? ""
-                                  : "focus:ring-2 focus:ring-yellow-500"
+                                  : "focus:ring-2 focus:ring-yellow-500",
                               )}
                             />
                             <button
