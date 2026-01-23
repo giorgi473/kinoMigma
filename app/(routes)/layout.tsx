@@ -54,7 +54,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 import { MobileNav } from "@/components/MobileNav"; // new import
